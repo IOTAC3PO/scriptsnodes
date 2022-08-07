@@ -19,4 +19,4 @@
 	sudo sed -i "s/\"passwordHash\": \"0000000000000000000000000000000000000000000000000000000000000000\"/\"passwordHash\": \"${passwordHash}\"/g" /var/lib/hornet/config.json
 	sudo sed -i "s/\"passwordSalt\": \"0000000000000000000000000000000000000000000000000000000000000000\"/\"passwordSalt\": \"${passwordSalt}\"/g" /var/lib/hornet/config.json
 	sudo systemctl restart hornet
-	sudo systemctl -xfe hornet
+	sudo journalctl -xfu hornet
