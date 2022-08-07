@@ -1,9 +1,5 @@
 
-if [[ $1 ne "" ]]
-then
-    echo pass. $1
-
-	sudo apt update -y && sudo apt upgrade -y
+	sudo apt update -y && sudo apt upgrade -y && sudo apt install jq -y
 	wget -qO - https://ppa.hornet.zone/pubkey.txt | sudo apt-key add -
 	sudo sh -c 'echo "deb http://ppa.hornet.zone stable main" >> /etc/apt/sources.list.d/hornet.list'
 	sudo apt update -y && sudo apt install hornet
@@ -23,8 +19,4 @@ then
 	sudo sed -i "s/\"passwordHash\": \"0000000000000000000000000000000000000000000000000000000000000000\"/\"passwordHash\": \"${passwordHash}\"/g" /var/lib/hornet/config.json
 	sudo sed -i "s/\"passwordSalt\": \"0000000000000000000000000000000000000000000000000000000000000000\"/\"passwordSalt\": \"${passwordSalt}\"/g" /var/lib/hornet/config.json
 	sudo systemctl restart hornet
-
-else
-    echo "Falta el pass"
-fi
-
+	sudo systemctl -xfe hornet
