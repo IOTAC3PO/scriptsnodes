@@ -4,7 +4,7 @@ sudo systemctl enable nginx.service
 mkdir cache
 touch hornet
 
-cat << EOF > hornet
+sudo bash -c 'cat << EOF > hornet
 limit_req_zone $binary_remote_addr zone=mylimit:10m rate=5r/s;
 proxy_cache_path  /root/cache  levels=1:2    keys_zone=STATIC:10m
 inactive=24h  max_size=1g;
@@ -33,7 +33,7 @@ server {
       proxy_set_header Connection "upgrade";
     }
 }
-EOF
+EOF'
 
 sudo rm /etc/nginx/sites-enabled/default
 sudo mv hornet /etc/nginx/sites-available/
