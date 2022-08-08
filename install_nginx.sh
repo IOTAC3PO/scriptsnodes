@@ -36,8 +36,8 @@ server {
 EOF
 
 sudo rm /etc/nginx/sites-enabled/default
-sudo mv hornet /etc/nginx/sites-aviable
-sudo ln -s /etc/nginx/sites-aviable/hornet /etc/nginx/sites-enabled/hornet
+sudo mv hornet /etc/nginx/sites-avaialble
+sudo ln -s /etc/nginx/sites-available/hornet /etc/nginx/sites-enabled/hornet
 
 sudo nginx -t
 sudo ufw allow 80/tcp
