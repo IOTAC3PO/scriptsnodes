@@ -36,7 +36,7 @@ server {
 EOF
 
 sudo rm /etc/nginx/sites-enabled/default
-sudo mv hornet /etc/nginx/sites-avaialble/
+sudo mv hornet /etc/nginx/sites-available/
 sudo ln -s /etc/nginx/sites-available/hornet /etc/nginx/sites-enabled/hornet
 
 sudo nginx -t
