@@ -1,6 +1,4 @@
-sudo su
-
-cat << EOF > /etc/netplan/fixed_ip.yaml
+sudo bash -c 'cat << EOF > /etc/netplan/fixed_ip.yaml
 network:
   ethernets:
     enp0s3:
@@ -9,7 +7,7 @@ network:
       nameservers:
         addresses: [192.168.1.1, 8.8.8.8]
   version: 2
-EOF
-exit
+EOF'
+
 sudo netplan generate
 sudo netplan apply
