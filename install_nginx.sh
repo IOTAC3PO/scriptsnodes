@@ -42,3 +42,4 @@ sudo ln -s /etc/nginx/sites-available/hornet /etc/nginx/sites-enabled/hornet
 sudo nginx -t
 sudo ufw allow 80/tcp
 sudo ufw reload
+sudo systemctl restart nginx
