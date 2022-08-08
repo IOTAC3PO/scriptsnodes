@@ -1,4 +1,6 @@
-
+  GNU nano 6.2                          ej.sh                                   
+if [ "$1" != "" ]
+then
 	sudo apt update -y && sudo apt upgrade -y && sudo apt install jq -y
 	wget -qO - https://ppa.hornet.zone/pubkey.txt | sudo apt-key add -
 	sudo sh -c 'echo "deb http://ppa.hornet.zone stable main" >> /etc/apt/sources.list.d/hornet.list'
@@ -20,3 +22,7 @@
 	sudo sed -i "s/\"passwordSalt\": \"0000000000000000000000000000000000000000000000000000000000000000\"/\"passwordSalt\": \"${passwordSalt}\"/g" /var/lib/hornet/config.json
 	sudo systemctl restart hornet
 	sudo journalctl -xfu hornet
+else
+	echo "Falta parámetro.- PASSWORD"
+	echo "Para realiar la instalacion debe indicar el password del nodo.- ej sh install_hornet_ppa.sh 0000"
+fi
