@@ -1,4 +1,4 @@
-  GNU nano 6.2                          ej.sh                                   
+#!/bin/sh
 if [ "$1" != "" ]
 then
 	sudo apt update -y && sudo apt upgrade -y && sudo apt install jq -y
