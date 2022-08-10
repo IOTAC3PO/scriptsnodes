@@ -1,4 +1,4 @@
-sudo apt update -y && sudo apt upgrade -y && sudo apt install jq -y
+sudo apt update -y && sudo apt upgrade -y && sudo apt install jq curl -y
 curl -fsSL https://get.docker.com -o get-docker.sh && sh get-docker.sh
 sudo groupadd docker
 sudo usermod -aG docker $USER
