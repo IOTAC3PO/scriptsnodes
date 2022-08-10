@@ -37,4 +37,4 @@ echo "DASHBOARD_USERNAME=$3" >> .env
 echo "DASHBOARD_PASSWORD=$passwordHash" >> .env
 echo "DASHBOARD_SALT=$passwordSalt" >> .env
 ./prepare_docker.sh
-docker-compose up 
+docker-compose up -d
